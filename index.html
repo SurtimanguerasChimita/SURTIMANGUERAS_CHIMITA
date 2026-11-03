@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surtimangueras Chimitá | Soluciones Hidráulicas y Mecánicas</title>
+    <!-- Librería FontAwesome para Íconos Oficiales de Redes Sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header y Navegación Principal -->
+    <header class="header">
+        <a href="#inicio" class="logo-link">
+            <img src="img/Logo-SurtiMangueras.webp" alt="Logo Surtimangueras Chimitá" class="site-logo">
+        </a>
+        <nav class="nav" id="nav">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            
+            <!-- Botón Productos con Flecha Interactiva Desplegable -->
+            <div class="dropdown-container" id="dropdownProductos">
+                <div class="dropdown-header">
+                    <a href="#categorias-destacadas" class="dropdown-title">PRODUCTOS</a>
+                    <button type="button" class="arrow-btn" aria-label="Desplegar categorías de productos" onclick="toggleProductosMenu(event)">
+                        <span class="arrow-icon">▼</span>
+                    </button>
+                </div>
+
+                <!-- Lista Desplegable Organizada en Columnas -->
+                <div class="dropdown-menu" id="menuProductosList">
+                    <div class="dropdown-grid">
+                        <a href="#categorias-destacadas" onclick="abrirCategoriaModal('Mangueras', event)">MANGUERAS</a>
+                        <a href="#categorias-destacadas" onclick="abrirCategoriaModal('Aceites', event)">ACEITES DE MOTOR</a>
+                        <a href="#categorias-destacadas" onclick="abrirCategoriaModal('Abrazaderas', event)">ABRAZADERAS</a>
+                        <a href="#categorias-destacadas" onclick="abrirCategoriaModal('Acoples', event)">ACOPLES Y ADAPTADORES</a>
+                        <a href="#categorias-destacadas" onclick="abrirCategoriaModal('Refrigerante', event)">REFRIGERANTES Y TARROS AUXILIARES</a>
+                        <a href="#categorias-destacadas" onclick="abrirCategoriaModal('Frenos', event)">SISTEMA DE FRENOS DE AIRE</a>
+                        <a href="#categorias-destacadas" onclick="abrirCategoriaModal('Sellador', event)">SELLADORES, SPRAYS, SILICONAS</a>
+                        <a href="#categorias-destacadas" onclick="abrirCategoriaModal('Correas', event)">CORREAS Y GUAYAS</a>
+                        <a href="#categorias-destacadas" onclick="abrirCategoriaModal('Accesorios', event)">ACCESORIOS Y COMPLEMENTOS</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#contacto">Contacto</a>
+
+            <!-- Íconos de Redes Sociales (Header) -->
+            <div class="social-icons-header">
+                <a href="https://www.instagram.com/surti_mangueras?cplk=MWxqdHBkYTdpZXpmNA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@surtimangueras.chi?_r=1&_t=ZS-9B4ZtZXAW82" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://wa.me/573182740604" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </nav>
+
+        <button type="button" class="btn-primary" onclick="contactarWhatsApp('CONSULTA GENERAL')">Escríbenos</button>
+        <button type="button" class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-image">
+            <img src="img/Logo-SurtiMangueras.webp" alt="Surtimangueras Chimitá Logo">
+        </div>
+        <div class="hero-content">
+            <h1>SOLUCIONES PERSONALIZADAS A TU ALCANCE</h1>
+            <p>Ensamble técnico de mangueras, alta y baja presión.</p>
+            <div class="hero-buttons">
+                <a href="#categorias-destacadas" class="btn-secondary btn-expanded">Ver Productos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Especializados -->
+    <section id="servicios" class="services">
+        <h2 class="section-title">NUESTROS SERVICIOS</h2>
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <h3>ENSAMBLE TÉCNICO DE MANGUERAS ALTA Y BAJA PRESIÓN</h3>
+                <button type="button" class="btn-card" onclick="contactarWhatsApp('ENSAMBLE TÉCNICO DE MANGUERAS ALTA Y BAJA PRESIÓN')">Saber más</button>
+            </div>
+            <div class="servicio-card">
+                <h3>CAMBIO DE MANGUERAS</h3>
+                <button type="button" class="btn-card" onclick="contactarWhatsApp('CAMBIO DE MANGUERAS')">Saber más</button>
+            </div>
+            <div class="servicio-card">
+                <h3>CAMBIO DE CORREAS</h3>
+                <button type="button" class="btn-card" onclick="contactarWhatsApp('CAMBIO DE CORREAS')">Saber más</button>
+            </div>
+            <div class="servicio-card">
+                <h3>SOLDADURAS ESPECIALES</h3>
+                <button type="button" class="btn-card" onclick="contactarWhatsApp('SOLDADURAS ESPECIALES')">Saber más</button>
+            </div>
+            <div class="servicio-card">
+                <h3>VENTA DE REPUESTOS</h3>
+                <button type="button" class="btn-card" onclick="contactarWhatsApp('VENTA DE REPUESTOS')">Saber más</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORÍAS EN MENÚS -->
+    <section id="categorias-destacadas" class="featured-categories">
+        <h2 class="section-title">NUESTRAS CATEGORÍAS DE PRODUCTOS</h2>
+        <div class="categories-banner-grid">
+            
+            <!-- Banner 1: Mangueras -->
+            <div class="category-banner-card">
+                <div class="banner-text">
+                    <h3>MANGUERAS INDUSTRIALES E HIDRÁULICAS</h3>
+                    <button type="button" class="btn-banner-ver" onclick="abrirCategoriaModal('Mangueras')">VER TODO</button>
+                </div>
+                <div class="banner-img">
+                    <img src="img/mangueras hidrulicas.webp" alt="Mangueras Industriales e Hidráulicas">
+                </div>
+            </div>
+
+            <!-- Banner 2: Aceites y Lubricantes -->
+            <div class="category-banner-card">
+                <div class="banner-text">
+                    <h3>ACEITES DE MOTOR</h3>
+                    <button type="button" class="btn-banner-ver" onclick="abrirCategoriaModal('Aceites')">VER TODO</button>
+                </div>
+                <div class="banner-img">
+                    <img src="img/aceite hidrulico2.webp" alt="Aceites de Motor e Hidráulicos">
+                </div>
+            </div>
+
+            <!-- Banner 3: Abrazaderas -->
+            <div class="category-banner-card">
+                <div class="banner-text">
+                    <h3>ABRAZADERAS INDUSTRIALES Y SOPORTES</h3>
+                    <button type="button" class="btn-banner-ver" onclick="abrirCategoriaModal('Abrazaderas')">VER TODO</button>
+                </div>
+                <div class="banner-img">
+                    <img src="img/Abrazaderas-1.webp" alt="Abrazaderas Industriales">
+                </div>
+            </div>
+
+            <!-- Banner 4: Acoples y Conexiones -->
+            <div class="category-banner-card">
+                <div class="banner-text">
+                    <h3>ACOPLES Y CONEXIONES RÁPIDAS</h3>
+                    <button type="button" class="btn-banner-ver" onclick="abrirCategoriaModal('Acoples')">VER TODO</button>
+                </div>
+                <div class="banner-img">
+                    <img src="img/acoples para mangueras hidraulicas.webp" alt="Acoples y Conexiones">
+                </div>
+            </div>
+
+            <!-- Banner 5: Refrigerantes y Tarros -->
+            <div class="category-banner-card">
+                <div class="banner-text">
+                    <h3>REFRIGERANTES Y TARROS AUXILIARES</h3>
+                    <button type="button" class="btn-banner-ver" onclick="abrirCategoriaModal('Refrigerante')">VER TODO</button>
+                </div>
+                <div class="banner-img">
+                    <img src="img/Refrigerante para radiador.webp" alt="Refrigerantes y Tarros">
+                </div>
+            </div>
+
+            <!-- Banner 6: Sistema de Frenos de Aire -->
+            <div class="category-banner-card">
+                <div class="banner-text">
+                    <h3>SISTEMAS DE FRENO DE AIRE Y VÁLVULAS</h3>
+                    <button type="button" class="btn-banner-ver" onclick="abrirCategoriaModal('Frenos')">VER TODO</button>
+                </div>
+                <div class="banner-img">
+                    <img src="img/camaras para freno de seguridad.webp" alt="Frenos de Aire">
+                </div>
+            </div>
+
+            <!-- Banner 7: Químicos y Aerosoles -->
+            <div class="category-banner-card">
+                <div class="banner-text">
+                    <h3>SELLADORES, SPRAYS, SILICONAS</h3>
+                    <button type="button" class="btn-banner-ver" onclick="abrirCategoriaModal('Sellador')">VER TODO</button>
+                </div>
+                <div class="banner-img">
+                    <img src="img/aflojatodo - penetrante antioxidante 2.webp" alt="SELLADOR">
+                </div>
+            </div>
+
+            <!-- Banner 8: Correas y Guayas -->
+            <div class="category-banner-card">
+                <div class="banner-text">
+                    <h3>CORREAS, GUAYAS Y TENSORES</h3>
+                    <button type="button" class="btn-banner-ver" onclick="abrirCategoriaModal('Correas')">VER TODO</button>
+                </div>
+                <div class="banner-img">
+                    <img src="img/correas para accesorios vehicular.webp" alt="Correas y Guayas">
+                </div>
+            </div>
+
+            <!-- Banner 9: Accesorios y Complementos -->
+            <div class="category-banner-card">
+                <div class="banner-text">
+                    <h3>ACCESORIOS Y COMPLEMENTOS</h3>
+                    <button type="button" class="btn-banner-ver" onclick="abrirCategoriaModal('Accesorios')">VER TODO</button>
+                </div>
+                <div class="banner-img">
+                    <img src="img/cornetas de aire.webp" alt="Accesorios Complementarios">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VENTANA MODAL FOCALIZADA DE PRODUCTOS POR CATEGORÍA -->
+    <div id="categoryProductsModal" class="modal-category-overlay">
+        <div class="modal-category-content">
+            <div class="modal-category-header">
+                <h2 id="modalCategoryTitle">PRODUCTOS DE LA CATEGORÍA</h2>
+                <button type="button" class="btn-close-cat" onclick="cerrarCategoriaModal()">&times;</button>
+            </div>
+            
+            <div class="products-grid-modal" id="productsContainer">
+                
+                <!-- ABRAZADERAS -->
+                <div class="prod-card Abrazaderas">
+                    <img src="img/Abrazaderas-1.webp" alt="ABRAZADERAS" onclick="ampliarImagen(this.src)">
+                    <h4>ABRAZADERAS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ABRAZADERAS')">Cotizar</button>
+                </div>
+                <div class="prod-card Abrazaderas">
+                    <img src="img/abrazaderas de soportte.webp" alt="ABRAZADERAS DE PRESIÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ABRAZADERAS DE PRESIÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ABRAZADERA DE PRESIÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Abrazaderas">
+                    <img src="img/abrazaderas. 2.webp" alt="ABRAZADERAS DE SEGURIDAD" onclick="ampliarImagen(this.src)">
+                    <h4>ABRAZADERAS DE SEGURIDAD</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ABRAZADERAS DE SEGURIDAD')">Cotizar</button>
+                </div>
+                <div class="prod-card Abrazaderas">
+                    <img src="img/abrazaderas. 4.webp" alt="ABRAZADERAS DE CREMALLERA" onclick="ampliarImagen(this.src)">
+                    <h4>ABRAZADERAS DE CREMALLERA</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ABRAZADERAS DE CREMALLERA')">Cotizar</button>
+                </div>
+                <div class="prod-card Abrazaderas">
+                    <img src="img/abrazaderas. 8.webp" alt="ABRAZADERAS PARA EXOSTO" onclick="ampliarImagen(this.src)">
+                    <h4>ABRAZADERAS PARA EXOSTO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ABRAZADERAS PARA EXOSTO')">Cotizar</button>
+                </div>
+                <div class="prod-card Abrazaderas">
+                    <img src="img/abrazaderas. 6.webp" alt="ABRAZADERAS INDUSTRIALES" onclick="ampliarImagen(this.src)">
+                    <h4>ABRAZADERAS INDUSTRIALES</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ABRAZADERAS INDUSTRIALES')">Cotizar</button>
+                </div>
+                <div class="prod-card Abrazaderas">
+                    <img src="img/abrazaderas. 7.webp" alt="ABRAZADERAS INDUSTRIALES" onclick="ampliarImagen(this.src)">
+                    <h4>ABRAZADERAS INDUSTRIALES</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ABRAZADERAS INDUSTRIALES')">Cotizar</button>
+                </div>
+                <div class="prod-card Abrazaderas">
+                    <img src="img/abrazaderas.webp" alt="ABRAZADERAS INDUSTRIALES" onclick="ampliarImagen(this.src)">
+                    <h4>ABRAZADERAS INDUSTRIALES</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ABRAZADERAS INDUSTRIALES')">Cotizar</button>
+                </div>
+
+                <!-- ACEITES -->
+                <div class="prod-card Aceites">
+                    <img src="img/hidrualico.webp" alt="ACEITE HIDRÁULICO ISO68/AW MINEROIL - QUINTAL" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE HIDRÁULICO ISO68/AW MINEROIL QUINTAL</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE HIDRÁULICO ISO68/AW MINEROIL QUINTAL')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite hidrulico2.webp" alt="ACEITE HIDRÁULICO AW 68 MOBIL QUINTAL" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE HIDRÁULICO AW 68 MOBIL QUINTAL</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE HIDRÁULICO AW 68 MOBIL QUINTAL')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite hidrulico4.webp" alt="ACEITE HIDRÁULICO AW 68 MOBIL CUARTO" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE HIDRÁULICO AW 68 MOBIL CUARTO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE HIDRÁULICO AW 68 MOBIL - CUARTO')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 2.webp" alt="ACEITE ULTREK 50 MONOGRADO CUARTO" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE ULTREK 50 MONOGRADO CUARTO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE ULTREK 50 MONOGRADO CUARTO')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 9.webp" alt="ACEITE HIDRÁULICO 15W-40 MOBIL - CUARTO" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE HIDRÁULICO 15W-40 MOBIL CUARTO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE HIDRÁULICO 15W-40 MOBIL CUARTO')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 17.webp" alt="ACEITE PARA MOTORES HIDRÁULICO CDP CUARTO" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE PARA MOTORES HIDRÁULICO CDP CUARTO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE PARA MOTORES HIDRÁULICO CDP CUARTO')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite hidrulico.webp" alt="ACEITE HIDRÁULICO ISO68 TRAZFLUID GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE HIDRAULICO ISO68 TRAZFLUID GALON</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE HIDRÁULICO ISO68 TRAZFLUID GALÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite hidrulico3.webp" alt="ACEITE HIDRÁULICO AW-68 MOBIL GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE HIDRÁULICO AW-68 MOBIL GALÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE HIDRÁULICO AW-68 MOBIL - GALÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 3.webp" alt="ACEITE PARA MOTORES 15W-40 VALVOLINE GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE PARA MOTORES 15W-40 VALVOLINE GALÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE PARA MOTORES 15W-40 VALVOLINE GALÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 4.webp" alt="ACEITE PARA MOTORES 15W-40 DELO GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE PARA MOTORES 15W-40 DELO GALÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE PARA MOTORES 15W-40 DELO GALÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 5.webp" alt="ACEITE PARA MOTORES 15W-40 MOBIL GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE PARA MOTORES 15W-40 MOBIL GALÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE PARA MOTORES 15W-40 MOBIL GALÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 6.webp" alt="ACEITE PARA MOTORES 15W-40 MULTIGRADO ULTREK GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE PARA MOTORES 15W-40 MULTIGRADO ULTREK GALÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE PARA MOTORES 15W-40 MULTIGRADO ULTREK GALÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 7.webp" alt="ACEITE PARA MOTORES 85W-40 DIFERENCIAL ULTREK GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE PARA MOTORES 85W-40 DIFERENCIAL ULTREK GALÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE PARA MOTORES 85W-40 DIFERENCIAL ULTREK GALÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 8.webp" alt="ACEITE PARA MOTORES 50 TRAZMOTOR CDP GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE PARA MOTORES 50 TRAZMOTOR CDP GALÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE PARA MOTORES 50 TRAZMOTOR CDP GALÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 10.webp" alt="ACEITE PARA MOTORES 80W-90 HAVOLINE GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE PARA MOTORES 80W-90 HAVOLINE GALÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE PARA MOTORES 80W-90 HAVOLINE GALÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 11.webp" alt="ACEITE PARA MOTORES 80W-90 TRANSMISIÓN ULTREK GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE PARA MOTORES 80W-90 TRANSMISIÓN ULTREK GALÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE PARA MOTORES 80W-90 TRANSMISIÓN ULTREK GALÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 12.webp" alt="ACEITE PARA MOTORES 1350 MONOGRADO MOBIL GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE PARA MOTORES 1350 MONOGRADO MOBIL GALÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE PARA MOTORES 1350 MONOGRADO MOBIL GALÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/aceite para motores 14.webp" alt="ACEITE PARA MOTORES HD SAE 50 URSA GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE PARA MOTORES HD SAE 50 URSA GALÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE PARA MOTORES HD SAE 50 URSA GALÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Aceites">
+                    <img src="img/Balbulina para transmision.webp" alt="ACEITE PARA MOTORES 85W-140 HAVOLINE GALÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ACEITE PARA MOTORES 85W-140 HAVOLINE GALÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACEITE PARA MOTORES 85W-140 HAVOLINE GALÓN')">Cotizar</button>
+                </div>
+
+                <!-- ACOPLES -->
+                <div class="prod-card Acoples">
+                    <img src="img/acoples para mangueras hidraulicas.webp" alt="ACOPLES PARA MANGUERA HIDRÁULICA" onclick="ampliarImagen(this.src)">
+                    <h4>ACOPLES PARA MANGUERA HIDRÁULICA</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACOPLES PARA MANGUERA HIDRÁULICA')">Cotizar</button>
+                </div>
+                <div class="prod-card Acoples">
+                    <img src="img/graseras.webp" alt="GRASERAS REFORZADAS EN BRONCE" onclick="ampliarImagen(this.src)">
+                    <h4>GRASERAS REFORZADAS EN BRONCE</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de GRASERAS REFORZADAS EN BRONCE')">Cotizar</button>
+                </div>
+                <div class="prod-card Acoples">
+                    <img src="img/acoples rapidos en aluminio.webp" alt="ACOPLES RÁPIDOS EN ALUMINIO" onclick="ampliarImagen(this.src)">
+                    <h4>ACOPLES RÁPIDOS EN ALUMINIO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACOPLES RÁPIDOS EN ALUMINIO')">Cotizar</button>
+                </div>
+                <div class="prod-card Acoples">
+                    <img src="img/acoples rapidos hidrulicos .webp" alt="ACOPLES RÁPIDOS HIDRÁULICOS" onclick="ampliarImagen(this.src)">
+                    <h4>ACOPLES RÁPIDOS HIDRÁULICOS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ACOPLES RÁPIDOS HIDRÁULICOS')">Cotizar</button>
+                </div>
+                <div class="prod-card Acoples">
+                    <img src="img/racores-neumatico en pasta.webp" alt="RACORES NEUMÁTICOS EN PASTA" onclick="ampliarImagen(this.src)">
+                    <h4>RACORES NEUMÁTICOS EN PASTA</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de RACORES NEUMÁTICOS EN PASTA')">Cotizar</button>
+                </div>
+                <div class="prod-card Acoples">
+                    <img src="img/roqueres en bronce.webp" alt="RACORES EN BRONCE" onclick="ampliarImagen(this.src)">
+                    <h4>RACORES EN BRONCE</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de RACORES EN BRONCE')">Cotizar</button>
+                </div>
+                <div class="prod-card Acoples">
+                    <img src="img/llaves de paso rapido.webp" alt="LLAVES DE PASO RÁPIDO" onclick="ampliarImagen(this.src)">
+                    <h4>LLAVES DE PASO RÁPIDO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de LLAVES DE PASO RÁPIDO')">Cotizar</button>
+                </div>
+                <div class="prod-card Acoples">
+                    <img src="img/llaves de paso rapido 2.webp" alt="LLAVES DE PASO RÁPIDO EN ACERO INOXIDABLE" onclick="ampliarImagen(this.src)">
+                    <h4>LLAVES DE PASO RÁPIDO EN ACERO INOXIDABLE</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de LLAVES DE PASO RÁPIDO EN ACERO INOXIDABLE')">Cotizar</button>
+                </div>
+                <div class="prod-card Acoples">
+                    <img src="img/llaves de paso rapido 3 tipomariposa.webp" alt="LLAVES DE PASO RÁPIDO TIPO MARIPOSA" onclick="ampliarImagen(this.src)">
+                    <h4>LLAVES DE PASO RÁPIDO TIPO MARIPOSA</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de LLAVES DE PASO RÁPIDO TIPO MARIPOSA')">Cotizar</button>
+                </div>
+
+                <!-- MANGUERAS -->
+                <div class="prod-card Mangueras">
+                    <img src="img/mangueras hidrulicas 4.webp" alt="MANGUERA HIDRÁULICA R115" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA HIDRÁULICA R115</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA HIDRÁULICA R115')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/mangueras hidrulicas 3.webp" alt="MANGUERA HIDRÁULICA R2" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA HIDRÁULICA R2</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA HIDRÁULICA R2')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/mangueras hidrulicas 2.webp" alt="MANGUERA HIDRÁULICA R5" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA HIDRÁULICA R5</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA HIDRÁULICA R5')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/mangueras hidrulicas.webp" alt="MANGUERA HIDRÁULICA R7" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA HIDRÁULICA R7</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA HIDRÁULICA R7')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/mangueras 2.webp" alt="MANGUERA SILICONA" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA SILICONA</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA SILICONA')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/mangueras 10.webp" alt="MANGUERA SILICONA" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA SILICONA</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA SILICONA')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/Mangueras en silicona para interculer.webp" alt="MANGUERA DE SILICONA PARA INTERCOOLER" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA DE SILICONA PARA INTERCOOLER</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA DE SILICONA PARA INTERCOOLER')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/mangueras silicona por yardas.webp" alt="MANGUERA DE SILICONA POR YARDAS" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA DE SILICONA POR YARDAS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA DE SILICONA POR YARDAS')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/mangueras 7.webp" alt="MANGUERA NEGRA: CODOS PRENSADOS" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA NEGRA: CODOS PRENSADOS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA NEGRA: CODOS PRENSADOS')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/mangueras 9.webp" alt="MANGUERA DE CUACHO TIPO TUBING PARA COMBUSTIBLE" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA DE CUACHO TIPO TUBING PARA COMBUSTIBLE</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA DE CUACHO TIPO TUBING PARA COMBUSTIBLE')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/manguera cristal.webp" alt="MANGUERA TRANSPARENTE PARA DESCARGA DE COMBUSTIBLE" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA TRANSPARENTE PARA DESCARGA DE COMBUSTIBLE</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA TRANSPARENTE PARA DESCARGA DE COMBUSTIBLE')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/mangueras 11.webp" alt="MANGUERA SÚPER FLEX CRISTAL TRENZADA" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA SÚPER FLEX CRISTAL TRENZADA</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA SÚPER FLEX CRISTAL TRENZADA')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/manguera cristal transparente sin refuerzo.jpg" alt="MANGUERA CRISTAL TRANSPARENTE SIN REFUERZO POR METRO" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERA CRISTAL TRANSPARENTE SIN REFUERZO POR METRO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERA CRISTAL TRANSPARENTE SIN REFUERZO POR METRO')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/carraco para forro de mangueras.webp" alt="CÁRRACO PARA FORRO DE MANGUERAS" onclick="ampliarImagen(this.src)">
+                    <h4>CÁRRACO PARA FORRO DE MANGUERAS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de CÁRRACO PARA FORRO DE MANGUERAS')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/Mangueras sopla cabinas.webp" alt="MANGUERAS SOPLA CABINAS" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERAS SOPLA CABINAS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERAS SOPLA CABINAS')">Cotizar</button>
+                </div>
+                <div class="prod-card Mangueras">
+                    <img src="img/Mangueras traider.webp" alt="MANGUERAS ESPIRALES PARA TRAILER" onclick="ampliarImagen(this.src)">
+                    <h4>MANGUERAS ESPIRALES PARA TRAILER</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de MANGUERAS ESPIRALES PARA TRAILER')">Cotizar</button>
+                </div>
+
+                <!-- REFRIGERANTE -->
+                <div class="prod-card Refrigerante">
+                    <img src="img/Refrigerante para radiador.webp" alt="Refrigerante para radiador" onclick="ampliarImagen(this.src)">
+                    <h4>LIQUIDO REFRIGERANTE SIMONIZ QUINTAL</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de LIQUIDO REFRIGERANTE SIMONIZ QUINTAL')">Cotizar</button>
+                </div>
+                <div class="prod-card Refrigerante">
+                    <img src="img/Refrigerante para radiado 2.webp" alt="Refrigerante para radiador" onclick="ampliarImagen(this.src)">
+                    <h4>LIQUIDO REFRIGERANTE QOOL Y MOBIL - 5 GALONES</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de LIQUIDO REFRIGERANTE QOOL Y MOBIL 5 GALONES')">Cotizar</button>
+                </div>
+                <div class="prod-card Refrigerante">
+                    <img src="img/Tarros auxiliar refrigeración 2.webp" alt="TARROS AUXILIARES DE REFRIGERACIÓN" onclick="ampliarImagen(this.src)">
+                    <h4>TARROS AUXILIARES DE REFRIGERACIÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de TARROS AUXILIARES DE REFRIGERACIÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Refrigerante">
+                    <img src="img/Tarros auxiliar refrigeración.webp" alt="TARROS AUXILIARES DE REFRIGERACIÓN" onclick="ampliarImagen(this.src)">
+                    <h4>TARROS AUXILIARES DE REFRIGERACIÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de TARROS AUXILIARES DE REFRIGERACIÓN')">Cotizar</button>
+                </div>
+                <div class="prod-card Refrigerante">
+                    <img src="img/Tapas de radiador.webp" alt="TAPAS PARA RADIADOR" onclick="ampliarImagen(this.src)">
+                    <h4>TAPAS PARA RADIADOR</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de TAPAS PARA RADIADOR')">Cotizar</button>
+                </div>
+
+                <!-- FRENOS DE AIRE -->
+                <div class="prod-card Frenos Boster Cámara Diafragma Peras Válvulas">
+                    <img src="img/bombona de suspension.webp" alt="BOMBONA DE SUSPENSIÓN NEUMÁTICA" onclick="ampliarImagen(this.src)">
+                    <h4>BOMBONA DE SUSPENSIÓN NEUMÁTICA</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de BOMBONA DE SUSPENSIÓN NEUMÁTICA')">Cotizar</button>
+                </div>
+                <div class="prod-card Frenos Boster">
+                    <img src="img/boster para freno de agua.webp" alt="GATO PARA FRENO DE AHOGO" onclick="ampliarImagen(this.src)">
+                    <h4>GATO PARA FRENO DE AHOGO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de GATO PARA FRENO DE AHOGO')">Cotizar</button>
+                </div>
+                <div class="prod-card Frenos Cámara">
+                    <img src="img/camaras para freno de seguridad.webp" alt="CÁMARAS PARA FRENO DE AIRE" onclick="ampliarImagen(this.src)">
+                    <h4>CÁMARAS PARA FRENO DE AIRE</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de CÁMARAS PARA FRENO DE AIRE')">Cotizar</button>
+                </div>
+                <div class="prod-card Frenos Diafragma">
+                    <img src="img/Diafragmas para cámara de freno.webp" alt="DIAFRAGMAS PARA CÁMARA DE FRENO" onclick="ampliarImagen(this.src)">
+                    <h4>DIAFRAGMAS PARA CÁMARA DE FRENO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de DIAFRAGMAS PARA CÁMARA DE FRENO')">Cotizar</button>
+                </div>
+                <div class="prod-card Frenos Peras">
+                    <img src="img/peras para bajo de aire.webp" alt="Peras para bajo de aire" onclick="ampliarImagen(this.src)">
+                    <h4>PERA FULLER</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de PERA FULLER')">Cotizar</button>
+                </div>
+                <div class="prod-card Frenos Válvulas">
+                    <img src="img/Valbulas sistema freno de aire.webp" alt="VÁLVULAS PARA SISTEMA DE FRENO DE AIRE" onclick="ampliarImagen(this.src)">
+                    <h4>VÁLVULAS PARA SISTEMA DE FRENO DE AIRE</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de VÁLVULAS PARA SISTEMA DE FRENO DE AIRE')">Cotizar</button>
+                </div>
+                <div class="prod-card Frenos Hidroserveros">
+                    <img src="img/hidroservos para close.webp" alt="Hidroserveros para clutch" onclick="ampliarImagen(this.src)">
+                    <h4>SERVO DE EMBRAGUE NEUMÁTICO / CLUTCH BOOSTER</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de SERVO DE EMBRAGUE NEUMÁTICO / CLUTCH BOOSTER')">Cotizar</button>
+                </div>
+                <div class="prod-card Frenos Liquido">
+                    <img src="img/liquido de frenos.webp" alt="LÍQUIDO DE FRENOS DOT 3" onclick="ampliarImagen(this.src)">
+                    <h4>LÍQUIDO DE FRENOS DOT 3</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de LÍQUIDO DE FRENOS DOT 3')">Cotizar</button>
+                </div>
+                <div class="prod-card Frenos Liquido">
+                    <img src="img/LÍQUIDO DE FRENOS DOT 4.jpeg" alt="LÍQUIDO DE FRENOS DOT 4" onclick="ampliarImagen(this.src)">
+                    <h4>LÍQUIDO DE FRENOS DOT 4</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de LÍQUIDO DE FRENOS DOT 4')">Cotizar</button>
+                </div>
+
+                <!-- QUÍMICOS Y AEROSOLES -->
+                <div class="prod-card Sellador">
+                    <img src="img/aflojatodo - penetrante antioxidante 2.webp" alt="AFLOJATODO PENETRANTE" onclick="ampliarImagen(this.src)">
+                    <h4>AFLOJATODO PENETRANTE</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de AFLOJATODO PENETRANTE')">Cotizar</button>
+                </div>
+                <div class="prod-card Sellador">
+                    <img src="img/aflojatodo - penetrante antioxidante.webp" alt="AFLOJATODO ANTIOXIDANTE" onclick="ampliarImagen(this.src)">
+                    <h4>AFLOJATODO ANTIOXIDANTE</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de AFLOJATODO ANTIOXIDANTE')">Cotizar</button>
+                </div>
+                <div class="prod-card Sellador">
+                    <img src="img/Arrancador de motores en frio.webp" alt="SPRAY ARRANCADOR DE MOTORES EN FRIO" onclick="ampliarImagen(this.src)">
+                    <h4>SPRAY ARRANCADOR DE MOTORES EN FRIO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de SPRAY ARRANCADOR DE MOTORES EN FRIO')">Cotizar</button>
+                </div>
+                <div class="prod-card Sellador">
+                    <img src="img/limpiador electronico.jpg" alt="Limpiador Electrónico" onclick="ampliarImagen(this.src)">
+                    <h4>LIMPIADOR ELECTRÓNICO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de LIMPIADOR ELECTRÓNICO')">Cotizar</button>
+                </div>
+                <div class="prod-card Sellador">
+                    <img src="img/pintura en sprike.webp" alt="PINTURA EN AEROSOL ALTA TEMPERATURA" onclick="ampliarImagen(this.src)">
+                    <h4>PINTURA EN AEROSOL ALTA TEMPERATURA</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de PINTURA EN AEROSOL ALTA TEMPERATURA')">Cotizar</button>
+                </div>
+                <div class="prod-card Sellador">
+                    <img src="img/sellador de bloque .webp" alt="SELLADOR DE BLOQUE Y CULATA SINTESOLDA" onclick="ampliarImagen(this.src)">
+                    <h4>SELLADOR DE BLOQUE Y CULATA SINTESOLDA</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de SELLADOR DE BLOQUE Y CULATA SINTESOLDA')">Cotizar</button>
+                </div>
+                <div class="prod-card Sellador">
+                    <img src="img/silicona grey.webp" alt="SILICONA GREY LOCTITE GRIS" onclick="ampliarImagen(this.src)">
+                    <h4>SILICONA GREY LOCTITE GRIS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de SILICONA GREY LOCTITE GRIS')">Cotizar</button>
+                </div>
+                <div class="prod-card Sellador">
+                    <img src="img/Grasa para rodamientos.webp" alt="GRASA CHEVRON MARFAK HD2" onclick="ampliarImagen(this.src)">
+                    <h4>GRASA CHEVRON MARFAK HD2</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de GRASA CHEVRON MARFAK HD2')">Cotizar</button>
+                </div>
+                <div class="prod-card Sellador">
+                    <img src="img/aditivo para rodamiento.webp" alt="ADITIVO PARA CAJA Y TRANSMICIÓN" onclick="ampliarImagen(this.src)">
+                    <h4>ADITIVO PARA CAJA Y TRANSMICIÓN</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ADITIVO PARA CAJA Y TRANSMICIÓN')">Cotizar</button>
+                </div>
+
+                <!-- CORREAS Y GUAYAS -->
+                <div class="prod-card Correas">
+                    <img src="img/correas para accesorios vehicular.webp" alt="Correas para accesorios" onclick="ampliarImagen(this.src)">
+                    <h4>CORREAS DE ACCESORIOS E INDUSTRIALES</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de CORREAS DE ACCESORIOS E INDUSTRIALES')">Cotizar</button>
+                </div>
+                <div class="prod-card Correas">
+                    <img src="img/tenzores para correas.webp" alt="Correas para accesorios" onclick="ampliarImagen(this.src)">
+                    <h4>TENSOR DE CORREA</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de TENSOR DE CORREA')">Cotizar</button>
+                </div>
+                <div class="prod-card Correas Guayas">
+                    <img src="img/guayas de control de cambio.webp" alt="Guayas de control de cambio" onclick="ampliarImagen(this.src)">
+                    <h4>GUAYA SELECTORA DE CAMBIOS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de GUAYA SELECTORA DE CAMBIOS')">Cotizar</button>
+                </div>
+                <div class="prod-card Correas Guayas">
+                    <img src="img/guayas de control de cambio2.webp" alt="Guayas de control de cambio" onclick="ampliarImagen(this.src)">
+                    <h4>GUAYA CONTROL DE CAMBIOS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de GUAYA CONTROL DE CAMBIOS')">Cotizar</button>
+                </div>
+
+                <!-- ACCESORIOS Y COMPLEMENTOS -->
+                <div class="prod-card Accesorios Arandelas">
+                    <img src="img/arandelas para sello encuachetadas.webp" alt="ARANDELAS PARA SELLO ENCAUCHETADAS" onclick="ampliarImagen(this.src)">
+                    <h4>ARANDELAS PARA SELLO ENCAUCHETADAS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ARANDELAS PARA SELLO ENCAUCHETADAS')">Cotizar</button>
+                </div>
+                <div class="prod-card Accesorios limpiabrizas">
+                    <img src="img/brazos para limpiabrizas.webp" alt="BRAZOS PARA LIMPIABRIZAS" onclick="ampliarImagen(this.src)">
+                    <h4>BRAZOS PARA LIMPIABRIZAS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de BRAZOS PARA LIMPIABRIZAS')">Cotizar</button>
+                </div>
+                <div class="prod-card Accesorios limpiabrizas">
+                    <img src="img/plumillas limpiabrizas .webp" alt="PLUMILLAS LIMPIABRIZAS" onclick="ampliarImagen(this.src)">
+                    <h4>PLUMILLAS LIMPIABRIZAS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de PLUMILLAS LIMPIABRIZAS')">Cotizar</button>
+                </div>
+                <div class="prod-card Accesorios Cornetas">
+                    <img src="img/cornetas de aire.webp" alt="CORNETAS DE AIRE AUTOMOTRICES" onclick="ampliarImagen(this.src)">
+                    <h4>CORNETAS DE AIRE AUTOMOTRICES</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de CORNETAS DE AIRE AUTOMOTRICES')">Cotizar</button>
+                </div>
+                <div class="prod-card Accesorios Gancho">
+                    <img src="img/gancho para careta.webp" alt="GANCHOS PARA CAPÓ" onclick="ampliarImagen(this.src)">
+                    <h4>GANCHOS PARA CAPÓ</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de GANCHOS PARA CAPÓ')">Cotizar</button>
+                </div>
+                <div class="prod-card Accesorios Calibrador">
+                    <img src="img/pesadores de aire, calibador de aire.webp" alt="CALIBRADOR DE AIRE Y PESADOR" onclick="ampliarImagen(this.src)">
+                    <h4>CALIBRADOR DE AIRE Y PESADOR</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de CALIBRADOR DE AIRE Y PESADOR')">Cotizar</button>
+                </div>
+                <div class="prod-card Accesorios Pistola">
+                    <img src="img/pistola sopla cabina 2.webp" alt="PISTOLA DE AIRE ERGONÓMICA" onclick="ampliarImagen(this.src)">
+                    <h4>PISTOLA DE AIRE ERGONÓMICA</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de PISTOLA DE AIRE ERGONÓMICA')">Cotizar</button>
+                </div>
+                <div class="prod-card Accesorios Pistola">
+                    <img src="img/pistola sopla cabina.webp" alt="PISTOLA DE AIRE MULTIUSOS" onclick="ampliarImagen(this.src)">
+                    <h4>PISTOLA DE AIRE MULTIUSOS</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de PISTOLA DE AIRE MULTIUSOS')">Cotizar</button>
+                </div>
+                <div class="prod-card Accesorios Suncho">
+                    <img src="img/Suncho para tanque.webp" alt="SUNCHO PARA TANQUE DE COMBUSTIBLE" onclick="ampliarImagen(this.src)">
+                    <h4>SUNCHO PARA TANQUE DE COMBUSTIBLE</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de SUNCHO PARA TANQUE DE COMBUSTIBLE')">Cotizar</button>
+                </div>
+                <div class="prod-card Accesorios Tapas">
+                    <img src="img/tapas para tanque combustible.webp" alt="TAPAS PARA TANQUE DE COMBUSTIBLE" onclick="ampliarImagen(this.src)">
+                    <h4>TAPAS PARA TANQUE DE COMBUSTIBLE</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de TAPAS PARA TANQUE DE COMBUSTIBLE')">Cotizar</button>
+                </div>
+                <div class="prod-card Accesorios Balinera">
+                    <img src="img/valineras.webp" alt="Balinera" onclick="ampliarImagen(this.src)">
+                    <h4>BALINERA / RODAMIENTO</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de BALINERA / RODAMIENTO')">Cotizar</button>
+                </div>
+                <div class="prod-card Accesorios Ventiladores">
+                    <img src="img/Ventiladores.webp" alt="ASPA DE VENTILADOR DE RADIADOR PARA MOTOR" onclick="ampliarImagen(this.src)">
+                    <h4>ASPA DE VENTILADOR DE RADIADOR PARA MOTOR</h4>
+                    <button type="button" class="btn-primary-sm" onclick="contactarWhatsApp('Cotización de ASPA DE VENTILADOR DE RADIADOR PARA MOTOR')">Cotizar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contact">
+        <h2 class="section-title">CONTÁCTANOS / VISÍTANOS</h2>
+        <div class="contact-container contact-single">
+            <div class="contact-info">
+                <h3>Surtimangueras Chimitá</h3>
+                <p><strong>Ubicación:</strong> CR 2 #2-40 Zona Industrial Chimitá, Girón, Santander, Colombia</p>
+                <p><strong>Teléfono / WhatsApp:</strong> +57 318 274 0604</p>
+                <p><strong>Atención Taller:</strong> Lunes a viernes de 7:00 am a 6:30 pm y Sábados De 7:00 am a 4:30 pm</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Zoom para Imágenes de Productos -->
+    <div id="imageModal" class="modal" onclick="closeImageModal()">
+        <div class="image-modal-content" onclick="event.stopPropagation()">
+            <span class="close-img-btn" onclick="closeImageModal()">&times;</span>
+            <img id="expandedImg" src="" alt="Vista amplia del producto">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Surtimangueras Chimitá - Calidad, Rapidez y Soluciones Mecánicas.</p>
+            
+            <!-- Íconos de Redes Sociales (Footer) -->
+            <div class="social-icons-footer">
+                <a href="https://www.instagram.com/surti_mangueras?cplk=MWxqdHBkYTdpZXpmNA%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.tiktok.com/@surtimangueras.chi?_r=1&_t=ZS-9B4ZtZXAW82" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://wa.me/573182740604" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
